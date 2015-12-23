@@ -27,6 +27,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChickShoppingApp(1)", "Chic
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "41217"
+		SlnRelativePath = "ChickShoppingApp\"
 	EndProjectSection
 EndProject
 Global

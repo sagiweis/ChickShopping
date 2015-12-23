@@ -22,15 +22,15 @@ namespace ChickShoppingWebApi.Controllers
         public ActionResult GetUser(string uuid)
         {
             User user = UsersDataAccess.GetInstance().GetUser(uuid);
-            string converted = JsonConvert.SerializeObject(user, null, new JsonSerializerSettings());
-            return Json(converted, JsonRequestBehavior.AllowGet);
+            return Json(JsonConvert.SerializeObject(user, null, new JsonSerializerSettings()), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public void AddUser(string firstName, string secondName, string phoneNumber)
+        [HttpGet]
+        public ActionResult AddUser(string firstName, string lastName, string uuid)
         {
-            User user = new User(firstName, secondName, phoneNumber);
+            User user = new User(firstName, lastName, uuid);
             UsersDataAccess.GetInstance().AddUser(user);
+            return Json(JsonConvert.SerializeObject(user, null, new JsonSerializerSettings()), JsonRequestBehavior.AllowGet);
         }
     }
 }

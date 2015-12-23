@@ -1,29 +1,8 @@
-<ion-view view-title="ברוכים הבאים" ng-init="init()" style="background-color:#E8EBF1; direction:rtl">
-  <ion-content style="padding:20px">
-  {{uuid}}
-    <div ng-show="currentUser == null">
-    	<h2>הרשמה</h2>
-    	<label class="item item-input">
-		  <span class="input-label">שם פרטי</span>
-		  <input type="text" ng-model="registrationForm.firstName">
-		</label>
-		<label class="item item-input">
-		  <span class="input-label">שם משפחה</span>
-		  <input type="text" ng-model="registrationForm.lastName">
-		</label>
-		<div ng-show="!isRegistering">
-			<button class="button button-block button-assertive" ng-click="clear()">
-			  נקה
-			</button>
-			<button class="button button-block button-balanced" ng-click="register()">
-			  הירשם
-			</button>
-		</div>
-		<div ng-show="isRegistering" style="margin-top:15px; text-align:center">
-			<ion-spinner icon="android" class="spinner-assertive"></ion-spinner>
-		</div>
-    </div>
-    <div ng-show="currentUser != null">
+<ion-view ng-init="init()" style="background-color:#E8EBF1; direction:rtl">
+  <ion-content class="animated fadeIn" style="overflow:hidden">
+      <h1 style="font-family:Tahoma; text-align:center; margin-top:100px">קניות בצ'יק</h1>
+    <div class="animated fadeIn ng-hide" ng-show="UserService.user != null">
+        <h2 style="font-family:Tahoma; text-align:center; margin-top:100px">שלום {{UserService.user.firstName}} {{UserService.user.lastName}}</h2>
     </div>
   </ion-content>
 </ion-view>

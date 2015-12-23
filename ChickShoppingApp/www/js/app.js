@@ -27,24 +27,36 @@ angular.module('ChickShopping', ['ionic', 'ngCordovaMocks'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-  })
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+    })
 
-    .state('app.welcome', {
-      url: '/welcome',
-      views: {
-      'menuContent': {
+    .state('app.profile', {
+        url: '/profile',
+        views: {
+            'menuContent': {
+                templateUrl: 'js/modules/Profile/Profile.html',
+                controller: 'ProfileController'
+            }
+        }
+    })
+
+    .state('welcome', {
+        url: '/welcome',
         templateUrl: 'js/modules/Welcome/Welcome.html',
         controller: 'WelcomeController'
-      }  
-      }   
-  });
+    })
+
+    .state('registration', {
+        url: '/registration',
+        templateUrl: 'js/modules/Registration/Registration.html',
+        controller: 'RegistrationController'
+    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/welcome');
+  $urlRouterProvider.otherwise('/welcome');
 
-  $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  /*$httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];*/
 });
