@@ -1,8 +1,11 @@
-<ion-view ng-init="init()" style="background-color:#E8EBF1; direction:rtl">
+<ion-view style="background-color:#E8EBF1; direction:rtl">
   <ion-content class="animated fadeIn" style="overflow:hidden">
       <h1 style="font-family:Tahoma; text-align:center; margin-top:100px">קניות בצ'יק</h1>
     <div class="animated fadeIn ng-hide" ng-show="UserService.user != null">
-        <h2 style="font-family:Tahoma; text-align:center; margin-top:100px">שלום {{UserService.user.firstName}} {{UserService.user.lastName}}</h2>
+        <center>
+            <img ng-src="{{UserService.user.imageURI}}" style="height: 125px;width: 125px;border-radius: 50%;margin-top:50px;" />
+        </center>
+        <h2 style="font-family:Tahoma; text-align:center; margin-top:10px">שלום {{UserService.user.firstName}} {{UserService.user.lastName}}</h2>
     </div>
   </ion-content>
 </ion-view>

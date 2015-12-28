@@ -2,6 +2,9 @@
   <ion-content style="padding:20px;overflow:hidden">
     <div id="registrationDiv" class="animated bounceIn">
     	<h2>הרשמה</h2>
+        <center>
+            <img ng-src="{{registrationForm.imageURI}}" ng-click="chooseImage()" style="height: 125px;width: 125px;border-radius: 50%;margin: 10px;" />    
+        </center>
     	<label class="item item-input">
 		  <span class="input-label">שם פרטי</span>
 		  <input type="text" ng-model="registrationForm.firstName">

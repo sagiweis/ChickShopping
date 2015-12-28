@@ -3,6 +3,7 @@ using ChickShoppingDataAccess;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Http.Cors;
@@ -25,10 +26,10 @@ namespace ChickShoppingWebApi.Controllers
             return Json(JsonConvert.SerializeObject(user, null, new JsonSerializerSettings()), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult AddUser(string firstName, string lastName, string uuid)
+        [HttpPost]
+        public ActionResult AddUser(string uuid, string firstName, string lastName, string imageURI)
         {
-            User user = new User(firstName, lastName, uuid);
+            User user = new User(uuid, firstName, lastName, imageURI);
             UsersDataAccess.GetInstance().AddUser(user);
             return Json(JsonConvert.SerializeObject(user, null, new JsonSerializerSettings()), JsonRequestBehavior.AllowGet);
         }
